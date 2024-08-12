@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  transpiler_api:
+    image: ak0926/query_converter_v1_api:10082024.1
+    ports:
+      - "8100:8100"
+    networks:
+      - app-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8100/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  parsezilla_api:
+    image: abduljkhan/t2sql_pipeline:v0_0
+    ports:
+      - "8010:8010"
+    networks:
+      - app-network
+
+  parser_frontend_api:
+    image: ak0926/parser_api_frontend:v0_0
+    ports:
+      - "8510:8510"
+    environment:
+      - DO_NOT_EXECUTE=true
+    networks:
+      - app-network
+    depends_on:
+      - transpiler_api
+      - parsezilla_api
+
+networks:
+  app-network:
+    driver: bridge

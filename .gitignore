@@ -1,0 +1,34 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+
+# pyenv
+.python-version
+
+# virtualenv
+venv/
+ENV/
+
+# Rope project settings
+.ropeproject
+### VirtualEnv template
+# Virtualenv
+# http://iamzed.com/2009/05/07/a-primer-on-virtualenv/
+[Bb]in
+[Ii]nclude
+[Ll]ib
+[Ll]ib64
+[Ll]ocal
+[Ss]cripts
+pyvenv.cfg
+.venv
+pip-selfcheck.json
+
+# *.iml
+# *.ipr
+
+# File-based project format
+*.iws
+
+# idea folder, uncomment if you don't need it
+.idea/
+*.jar
