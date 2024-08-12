@@ -35,7 +35,7 @@ def start_java_parser(schema_content):
         java_command = [
             "java",
             "-jar",
-            "e6-engine-SNAPSHOT-jar-with-dependencies_9aug.jar",  # Adjust the path accordingly
+            "planner_builds/e6-engine-SNAPSHOT-jar-with-dependencies_9aug.jar",  # Adjust the path accordingly
             schema_txt_path,
         ]
         java_process = subprocess.Popen(java_command, env=os.environ.copy())
