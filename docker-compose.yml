@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   transpiler_api:
-    image: ak0926/query_converter_v1_api:10082024.1
+    image: ak0926/query_converter_v1_api:13082024
     ports:
       - "8100:8100"
     networks:
